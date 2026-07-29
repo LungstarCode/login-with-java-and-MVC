@@ -27,15 +27,19 @@ public class Register extends HttpServlet {
 		model.setTown(town);
 		 
 		int ra = model.register();
+		
 		HttpSession session = request.getSession();
+		session.setAttribute("name", name);
+		session.setAttribute("email", email);
+		
 		
 		if (ra == 0)
 		{
-			response.sendRedirect("");
+			response.sendRedirect("/LoginWithMVC/failure.jsp");
 		}
 		else 
 		{
-			response.sendRedirect("");
+			response.sendRedirect("/LoginWithMVC/success.jsp");
 		}
 	}
 

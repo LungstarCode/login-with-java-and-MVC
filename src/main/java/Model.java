@@ -10,7 +10,7 @@ public class Model {
 		
 		// configuration instance variables 
 		
-		Connection connection = null;
+		Connection connection;
 		int rowsAffected = 0;
 		
 		PreparedStatement statement = null;
@@ -45,6 +45,7 @@ public class Model {
 			try 
 			{
 				connection = JdbcUtility.getConnection();
+				
 				String sql = "INSERT INTO users(name, email, password, town) VALUES (?,?,?,?)";
 				statement=connection.prepareStatement(sql);
 				
