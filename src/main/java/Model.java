@@ -11,6 +11,7 @@ public class Model {
 		// configuration instance variables 
 		
 		Connection connection = null;
+		int rowsAffected = 0;
 		
 		PreparedStatement statement = null;
 		
@@ -18,29 +19,29 @@ public class Model {
 		public static String getName() {
 			return name;
 		}
-		public static void setName(String name) {
+		public void setName(String name) {
 			Model.name = name;
 		}
-		public static String getEmail() {
+		public String getEmail() {
 			return email;
 		}
-		public static void setEmail(String email) {
+		public void setEmail(String email) {
 			Model.email = email;
 		}
-		public static String getPassword() {
+		public String getPassword() {
 			return password;
 		}
-		public static void setPassword(String password) {
+		public void setPassword(String password) {
 			Model.password = password;
 		}
-		public static String getTown() {
+		public String getTown() {
 			return town;
 		}
-		public static void setTown(String town) {
+		public void setTown(String town) {
 			Model.town = town;
 		}
 		
-		public void register() {
+		public int register() {
 			try 
 			{
 				connection = JdbcUtility.getConnection();
@@ -53,12 +54,15 @@ public class Model {
 				statement.setString(4, town);
 				
 				// execute the query
+				rowsAffected=statement.executeUpdate();
 				
 			}
 			catch (SQLException e)
 			{
 				e.printStackTrace();
 			}
+			
+			return rowsAffected;
 		}
 		
 		
