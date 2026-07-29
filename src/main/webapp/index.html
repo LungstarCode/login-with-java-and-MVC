@@ -3,11 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <title>Registration page | Login with MVC</title>
+	<style>
+		
+  * {
+    box-sizing: border-box;
+  }
+ 
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #f1f5f9;
+  }
+ 
+  h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+ 
+  form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+  }
+ 
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    color: #f1f5f9;
+    font-size: 1rem;
+    padding: 0.6rem 0.2rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.25s ease;
+  }
+ 
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: rgba(241, 245, 249, 0.5);
+  }
+ 
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-bottom-color: #38bdf8;
+  }
+ 
+  /* Remove Chrome autofill background so it stays transparent */
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: #f1f5f9;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+ 
+  input[type="submit"] {
+    margin-top: 2rem;
+    background: #38bdf8;
+    border: none;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+ 
+  input[type="submit"]:hover {
+    background: #7dd3fc;
+  }
+ 
+  input[type="submit"]:active {
+    transform: scale(0.98);
+  }
+		
+	
+	
+	</style>
 </head>
 <body>
-	<h1>Welcome to the Login System with MVC</h1>
+	
 	
 	<form method="post" action="./Register">
+	<h1>Welcome to the Login System with MVC</h1>
 		
 		<input type="text" name="name" placeholder="Enter name: "/>
 		<br/><br/>
